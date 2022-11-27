@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Observer;
 
-import javax.swing.JFrame;
-
 import org.json.simple.parser.ParseException;
 
 import reflection.ReflectionFrameWork;
@@ -18,6 +16,8 @@ public class main {
         Votes votes = new Votes();
         ArrayList<Observer> observers = new ArrayList<Observer>();
         observers.add(new PieChart());
+        observers.add(new BarChart());
+        observers.add(new table());
 
         reflectionFrameWork.Execute(votes, observers);
 

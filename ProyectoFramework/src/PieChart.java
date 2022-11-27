@@ -39,7 +39,6 @@ public class PieChart extends JFrame implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         Candidate candidato = (Candidate) o;
-        
         datos.setValue(candidato.getName(), candidato.getNumVotes());
     }
     

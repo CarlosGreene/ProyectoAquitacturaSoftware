@@ -30,16 +30,16 @@ public class table extends JFrame implements Observer, ActionListener {
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Candidato uno",  new Integer(0)},
-                {"Candidato dos",  new Integer(0)},
-                {"Candidato tres",  new Integer(0)}
+                {new Integer(1), "Candidato uno",  new Integer(0)},
+                {new Integer(2), "Candidato dos",  new Integer(0)},
+                {new Integer(3), "Candidato tres",  new Integer(0)}
             },
             new String [] {
-                "Candidato", "Votos"
+                "ID", "Candidato", "Votos"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -93,11 +93,12 @@ public class table extends JFrame implements Observer, ActionListener {
     
     private void updateTable(){
         DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("ID");
         tableModel.addColumn("Nombre del candidato");
         tableModel.addColumn("Votos");
-        tableModel.addRow(new Object[]{"Candidato uno", getNumVotesCand1()});
-        tableModel.addRow(new Object[]{"Candidato dos", getNumVotesCand2()});
-        tableModel.addRow(new Object[]{"Candidato tres", getNumVotesCand3()});
+        tableModel.addRow(new Object[]{1, "Candidato uno", getNumVotesCand1()});
+        tableModel.addRow(new Object[]{2, "Candidato dos", getNumVotesCand2()});
+        tableModel.addRow(new Object[]{3, "Candidato tres", getNumVotesCand3()});
         table.setModel(tableModel);
     }
 
@@ -105,10 +106,10 @@ public class table extends JFrame implements Observer, ActionListener {
     public void actionPerformed(ActionEvent e) {
         List<String[]> list = new ArrayList<String[]>();
 
-        list.add(new String[]{"Candidato", "Votos"});
-        list.add(new String[]{"Candidato uno", String.valueOf(getNumVotesCand1())});
-        list.add(new String[]{"Candidato dos", String.valueOf(getNumVotesCand2())});
-        list.add(new String[]{"Candidato tres", String.valueOf(getNumVotesCand3())});
+        list.add(new String[]{"ID", "Candidato", "Votos"});
+        list.add(new String[]{"1", "Candidato uno", String.valueOf(getNumVotesCand1())});
+        list.add(new String[]{"2", "Candidato dos", String.valueOf(getNumVotesCand2())});
+        list.add(new String[]{"3", "Candidato tres", String.valueOf(getNumVotesCand3())});
 
         try {
             new CSVGenerator().generateCSV(list);

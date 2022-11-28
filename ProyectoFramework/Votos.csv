@@ -1,4 +1,4 @@
-"Candidato","Votos"
-"Candidato uno","3"
-"Candidato dos","2"
-"Candidato tres","1"
+"ID","Candidato","Votos"
+"1","Candidato uno","3"
+"2","Candidato dos","2"
+"3","Candidato tres","1"

@@ -1,0 +1,17 @@
+[
+   {
+      "transaccion":"Votos1",
+      "componentes":{
+         "Control":"mvc.controler.ControlImplementation",
+         "Modelo":"mvc.model.Candidate"
+      }
+   },
+
+   {
+      "transaccion":"Votos2",
+      "componentes":{
+         "Control":"mvc.controler.ControlImplementation",
+         "Modelo":"mvc.model.Candidate"
+      }
+   }
+]

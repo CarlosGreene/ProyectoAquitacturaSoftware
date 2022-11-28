@@ -14,9 +14,4 @@ public class Parse_services {
         Map<String, String> MainComponents = ((HashMap<String,String>) Json_parser.getMVConfig_file().get("componentes"));
         return MainComponents;
     }
-
-    public Map<String,String> getToNotifiedComponents() {
-        Map<String, String> MainComponents = ((HashMap<String,String>) Json_parser.getMVConfig_file().get("ANotificar"));
-        return MainComponents;
-    }
 }

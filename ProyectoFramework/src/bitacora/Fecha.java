@@ -1,4 +1,4 @@
-package Modelo;
+package bitacora;
 
 import java.io.IOException;
 

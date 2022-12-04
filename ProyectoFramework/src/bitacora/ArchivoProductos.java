@@ -1,4 +1,4 @@
-package Modelo;
+package bitacora;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
+
+import mvc.model.Candidate;
 
 public class ArchivoProductos extends Archivo {
 
@@ -86,10 +88,10 @@ try { Archivo.escribirBitacora(this.getClass(), new Object(){}.getClass().getEnc
 
     }
 
-    public LinkedList<Producto> Productos(String nombre) {
+    public LinkedList<Candidate> Productos(String nombre) {
         try { Archivo.escribirBitacora(this.getClass(), new Object(){}.getClass().getEnclosingMethod().getName());
         } catch (IOException ex) {}
-        LinkedList<Producto> salida = new LinkedList();
+        LinkedList<Candidate> salida = new LinkedList();
         String extension = ".txt";
         this.crearArchivo(nombre);
         File archivo = new File(nombre);
@@ -102,7 +104,7 @@ try { Archivo.escribirBitacora(this.getClass(), new Object(){}.getClass().getEnc
             while ((cadena = linea.readLine()) != null) {
 
                 int i = this.cantidadVotos(cadena + extension);
-                Producto producto = new Producto(cadena, i);
+                Candidate producto = new Candidate(i, cadena);
                 salida.add(producto);
 
             }

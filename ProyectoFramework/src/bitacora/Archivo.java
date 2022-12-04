@@ -1,4 +1,4 @@
-package Modelo;
+package bitacora;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,7 +13,7 @@ public class Archivo {
     }
 
     public void crearArchivo(String nombre) {
-try { Archivo.escribirBitacora(this.getClass(), new Object(){}.getClass().getEnclosingMethod().getName());
+    try { Archivo.escribirBitacora(this.getClass(), new Object(){}.getClass().getEnclosingMethod().getName());
         } catch (IOException ex) {}
         File archivo = new File(nombre);
 

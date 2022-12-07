@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import log.Log;
 import mvc.view.View;
 import parseJSON.JSON_Parser;
+import sql.DBCandidato;
 
 public class ReflectionFrameWork {
     private final HashMap<String, Class> main_components;
@@ -19,6 +20,7 @@ public class ReflectionFrameWork {
     private final JSON_Parser parser;
     private final ClassFinder finder;
     private final Log log;
+    private DBCandidato dbCandidato;
 
     public ReflectionFrameWork(String config_file_name, String transaction_file_name) {
         finder = new ClassFinder();
@@ -104,6 +106,8 @@ public class ReflectionFrameWork {
         String url = uml_components.get("Url");
         String user = uml_components.get("Usuario");
         String password = uml_components.get("Contraseña");
+
+        dbCandidato = new DBCandidato(url, user, password);
     }
 
     public void Execute(View principalView, ArrayList<Observer> observers) {

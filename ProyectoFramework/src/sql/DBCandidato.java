@@ -7,8 +7,12 @@ import java.sql.SQLException;
 import mvc.model.Candidate;
 
 public class DBCandidato extends DBConnection {
-    PreparedStatement preparedStatement;
-    ResultSet resultSet;
+    private PreparedStatement preparedStatement;
+    private ResultSet resultSet;
+
+    public DBCandidato(String url, String user, String  password){
+        super(url, user, password);
+    }
 
     public boolean insertarcandidate(Candidate candidate) {
         Connection connection = getConnection();

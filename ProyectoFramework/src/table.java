@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class table extends JFrame implements Observer, ActionListener {
+public class Table extends JFrame implements Observer, ActionListener {
     private JPanel mainPanel = new JPanel();
     private JScrollPane scrollPane = new JScrollPane();
     private JTable table;
@@ -21,7 +21,7 @@ public class table extends JFrame implements Observer, ActionListener {
     private int numVotesCand2 = 0;
     private int numVotesCand3 = 0;
 
-    public table() {
+    public Table() {
         table = new JTable();
         button1 = new JButton("Generar CSV");
         button1.addActionListener(this);

@@ -10,10 +10,23 @@ import org.apache.log4j.RollingFileAppender;
 
 
 public class Log {
+    private static Log logInstance;
+    private Logger LOG;
+
+    private Log(){
+    }
+
+    public static Log getInstance(){
+        if(logInstance == null)
+            logInstance = new Log();
+        return logInstance;
+    }
     
-    private static Logger LOG;
-    
-    public static Logger getLogger(Class name) {
+    public Logger getLOG() {
+        return LOG;
+    }
+
+    public Logger getLogger(Class<?> name) {
         try {
             LOG = Logger.getLogger(name);
             String logfile = "filelog.";

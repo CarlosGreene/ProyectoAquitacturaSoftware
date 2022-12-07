@@ -12,19 +12,18 @@ import reflection.ReflectionFrameWork;
 
 public class main {
 
-    private static final Logger LOG = Log.getLogger(main.class);
-
-    public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {        
+    public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {   
         ReflectionFrameWork reflectionFrameWork = new ReflectionFrameWork("ConfigMVC.json","Votos1");
         Votes votes = new Votes();
         ArrayList<Observer> observers = new ArrayList<Observer>();
-        //observers.add(new PieChart());
-        //observers.add(new BarChart());
-        //observers.add(new table());
 
-        LOG.info(observers.add(new PieChart()));
-        LOG.info(observers.add(new BarChart()));
-        LOG.info(observers.add(new table()));
+        PieChart pie = new PieChart();
+        BarChart bar = new BarChart();
+        Table table = new Table();
+
+        observers.add(pie);
+        observers.add(bar);
+        observers.add(table);
 
         reflectionFrameWork.Execute(votes, observers);
 

@@ -4,6 +4,14 @@
       "componentes":{
          "Control":"mvc.controler.ControlImplementation",
          "Modelo":"mvc.model.Candidate"
+      },
+      "registrar":{
+         "Object":"mvc.model.Candidate"
+      },
+      "DataBase":{
+         "Url":"jdbc:mysql://localhost:3306/votaciones?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+         "Usuario": "root",
+         "Contraseña":"root"
       }
    },
 
@@ -12,6 +20,14 @@
       "componentes":{
          "Control":"mvc.controler.ControlImplementation",
          "Modelo":"mvc.model.Candidate"
+      },
+      "Registrar":{
+         "Control":"mvc.controler.ControlImplementation"
+      },
+      "DataBase":{
+         "Url":"jdbc:mysql://localhost:3306/votaciones?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+         "Usuario": "root",
+         "Contraseña":"root"
       }
    }
 ]

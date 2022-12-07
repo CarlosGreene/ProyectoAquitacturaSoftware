@@ -1,3 +1,5 @@
 04-12-2022 15:46:27 INFO  main:25: true
 04-12-2022 15:46:28 INFO  main:26: true
 04-12-2022 15:46:28 INFO  main:27: true
+04-12-2022 16:09:12 INFO  main:26: PieChart[frame0,0,0,414x437,layout=java.awt.BorderLayout,title=,resizable,normal,defaultCloseOperation=DISPOSE_ON_CLOSE,rootPane=javax.swing.JRootPane[,7,30,400x400,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+04-12-2022 16:09:12 INFO  main:27: BarChart[frame1,0,0,414x437,layout=java.awt.BorderLayout,title=,resizable,normal,defaultCloseOperation=DISPOSE_ON_CLOSE,rootPane=javax.swing.JRootPane[,7,30,400x400,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777675,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]

@@ -24,6 +24,8 @@ public class VerifySin{
     public JSONObject jParse(String path, String transaccion) throws FileNotFoundException, IOException, ParseException{
         Object obj = new JSONParser().parse(new FileReader(path));
         String jsonTransaccion;
+        boolean existRegistrar = false;
+        boolean existUMLComponent = false;
         JSONArray je = (JSONArray) obj;
         Iterator ltrTransaction = je.iterator();
 
@@ -48,10 +50,63 @@ public class VerifySin{
                     componentsValue[i]= (String) pair.getValue();
                     i++;
                 }
+
+                Map registrar = ((Map)jo.get("registrar"));
+
+                if(registrar==null){
+                    System.out.println("No esta definido ANotificar");
+                    return null;
+                }
+                
+                Iterator<Map.Entry> itrNotificar = registrar.entrySet().iterator();
+                while (itrNotificar.hasNext()) {
+                    Map.Entry pair = itrNotificar.next();
+                    existRegistrar = true;
+                    if( ((String) pair.getKey()).equals("")) {
+                        System.out.println("clase a registrar no definida");
+                        return null;
+                    }
+                    if(((String) pair.getValue()).equals("")) {
+                        System.out.println("El valor de "+ pair.getKey()+ " a registrar no definida");
+                        return null;
+                    }
+                }
+
+                Map dataBase = ((Map)jo.get("DataBase"));
+
+                if(dataBase==null){
+                    System.out.println("No esta definido La base de datos");
+                    return null;
+                }
+                
+                Iterator<Map.Entry> itrUML = dataBase.entrySet().iterator();
+                while (itrUML.hasNext()) {
+                    Map.Entry pair = itrUML.next();
+                    existUMLComponent = true;
+                    if( ((String) pair.getKey()).equals("")) {
+                        System.out.println("Componente no definida");
+                        return null;
+                    }
+                    if(((String) pair.getValue()).equals("")) {
+                        System.out.println("El valor de "+ pair.getKey()+ " no definida");
+                        return null;
+                    }
+                }
                 
                 if(syntax(componentsKeys,componentsValue)==false){
                     return null;
                 }
+
+                if(existRegistrar==false){
+                    System.out.println("No se encontró una clase a registrar");
+                    return null;
+                }
+
+                if(existUMLComponent==false){
+                    System.out.println("No se encontró una clase a registrar");
+                    return null;
+                }
+
                 return jo;
             }  
         } 

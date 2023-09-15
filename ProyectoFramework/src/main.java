@@ -3,8 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Observer;
-import log.Log;
-import org.apache.log4j.Logger;
 
 import org.json.simple.parser.ParseException;
 
